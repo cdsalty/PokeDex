@@ -29,3 +29,31 @@ image source should be: https://raw.githubusercontent.com/PokeAPI/sprites/master
 
 On Pokecard.js, 
 const POKE_API = https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png
+
+PART 2: MAKING THINGS FANCIER AND ADDING LOGIC - Further Study
+
+Using Fancier Images
+Use this alternate source for nicer looking images: https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png
+
+ISSUE TO OVERCOME: the pokemon id for these images must be padded with zeros to three places, like: 001, 002, 034, 199, etc. Try writing a function to take an id like 4 and turn it into 004.
+
+
+
+Pokegame Component
+Modify your component hierarchy so that App renders a component called Pokegame. Pokegame should take your list of 8 pokemon and randomly assign them into two hands of 4 cards each. It should then render two Pokedex components, one for each hand.
+
+
+
+Once you’ve got this working, modify your Pokegame so that it also calculates the total experience for each hand of pokemon. It should pass this total to the Pokedex.
+
+
+
+Next, have the Pokegame component determine which hand is the “winner,” where the winning hand is the one with the higher total experience. Then modify the Pokedex component one more time so that it accepts a prop of isWinner. If the Pokedex is the winning one, it should display the message “THIS HAND WINS!” at the bottom of the deck.
+
+
+
+
+Now when you load the page, you should see two different hands with a randomly changing winner every time you refresh.
+
+Styling
+Add styling to your components — perhaps you can do interesting things when hovering over a Pokecard, or have them smoothly transition into the page, all via CSS?
