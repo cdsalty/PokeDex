@@ -19,6 +19,9 @@ class Pokegame extends Component {
         let hand2 = [ ...this.props.pokemonKey];
         
         // WRITE WHILE LOOP NOW... 
+        // zac note: so when you do let hand2= […this.props.name] it is taking 
+        // everything stored inside the this.props.name array, and creating an entirely new array of 
+        // the same exact information
 
         return (
             <div>
