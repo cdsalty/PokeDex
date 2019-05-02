@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Pokedex from './Pokedex'
 
 class Pokegame extends Component {
     static defaultProps = {     // Data that was provided to serve as the default Prop data 
@@ -16,16 +17,26 @@ class Pokegame extends Component {
 
     render() {
         let hand1 = [];
-        let hand2 = [ ...this.props.pokemonKey];
+        let hand2 = [ ...this.props.pokemonKey]; // an array that contains the contents of the pokemonKey array
         
         // WRITE WHILE LOOP NOW... 
-        // zac note: so when you do let hand2= […this.props.name] it is taking 
-        // everything stored inside the this.props.name array, and creating an entirely new array of 
-        // the same exact information
+        // takes everything stored inside the this.props.name array, createsa an entirely new array of the same exact information
+        while (hand1.length < hand2.length){
+            // what needs to happen? pick random index, set it equal to a random index 
+            let randomIndex = Math.floor(Math.random() * hand2.length); // create a variable, called randIndex and then assign it a random index position based off the hand 2 length
+                        // (round down),(a random number),(between 0 & however many pokemons are left) in hand2
+            // let randomPokemon = hand2.splice(0, 0, randomIndex);
+            let randomPokemon = hand2.splice(randomIndex, 1)[0];
+            // console.log(randomPokemon);
+            hand1.push(randomPokemon);
+        }
+        // console.log(hand1);
+        // console.log(hand2);
 
         return (
             <div>
-                <h1>Sanity Check</h1>
+                <Pokedex pokemonKey = {hand1} />
+                <Pokedex pokemonKey = {hand2} />
             </div>
         );
     }
